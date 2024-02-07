@@ -9,29 +9,55 @@
 
   <style>
 
-    .wrap1 > div {
-      width: 100px;
-      height: 100px;
+    .wrap2 {
+      width: 600px;
+      margin: 10px auto;
     }
-
-    .wrap1 > span {
-      width: 100px;
-      height: 100px;
+    .wrap2 div {
+      border: 1px solid gray;
     }
-
+    .wrap2 > .box1 {
+      width: 600px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      border-bottom: 0;
+    }
+    .wrap2 > .inner-wrap {
+      width: 600px;
+      height: 100px;
+      overflow: hidden;
+      border: 0;
+    }
+    .wrap2 > .inner-wrap > .box2, .wrap2 > .inner-wrap > .box3 {
+      width: 300px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      float: left;
+    }
+    .wrap2 > .inner-wrap > .box3 {
+      border-left: 0;
+    }
+    .wrap2 > .box4 {
+      width: 600px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      border-top: 0;
+    }
 
   </style>
 
-  <div class="wrap1">
-    <div>블록 요소</div>
-    <span>인라인 요소</span>
-
-    <hr>
-
-
-
-
+  <div class="wrap2">
+    <div class="box1">box1</div>
+    <div class="inner-wrap">
+      <div class="box2">box2</div>
+      <div class="box3">box3</div>
+    </div>
+    <div class="box4">box4</div>
   </div>
+
 
 </body>
 </html>
