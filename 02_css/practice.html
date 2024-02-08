@@ -8,55 +8,168 @@
 <body>
 
   <style>
-
-    .wrap2 {
-      width: 600px;
-      margin: 10px auto;
-    }
-    .wrap2 div {
+    
+    div {
+      box-sizing: border-box;
       border: 1px solid gray;
-    }
-    .wrap2 > .box1 {
-      width: 600px;
-      height: 100px;
-      text-align: center;
-      line-height: 100px;
-      border-bottom: 0;
-    }
-    .wrap2 > .inner-wrap {
-      width: 600px;
-      height: 100px;
-      overflow: hidden;
-      border: 0;
-    }
-    .wrap2 > .inner-wrap > .box2, .wrap2 > .inner-wrap > .box3 {
-      width: 300px;
-      height: 100px;
-      text-align: center;
-      line-height: 100px;
-      float: left;
-    }
-    .wrap2 > .inner-wrap > .box3 {
-      border-left: 0;
-    }
-    .wrap2 > .box4 {
-      width: 600px;
-      height: 100px;
-      text-align: center;
-      line-height: 100px;
-      border-top: 0;
     }
 
   </style>
 
-  <div class="wrap2">
-    <div class="box1">box1</div>
-    <div class="inner-wrap">
-      <div class="box2">box2</div>
-      <div class="box3">box3</div>
-    </div>
-    <div class="box4">box4</div>
+
+  <style>
+
+    .wrap1 {
+      width: 600px;
+      height: 200px;
+      display: flex;
+    }
+
+    .wrap1 > .box {
+      width: 50px;
+      height: 50px;
+    }
+
+
+  </style>
+
+
+  <div class="wrap1">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
   </div>
+
+  <hr>
+
+  <style>
+    .wrap2 {
+      width: 200px;
+      height: 200px;
+      display: flex;
+    }
+
+    .wrap2 > .box {
+      width: 50px;
+      height: 50px;
+    }
+    .wrap2#row {
+      flex-direction: row;
+    }
+    .wrap2#row-reverse {
+      flex-direction: row-reverse;
+    }
+
+    .wrap2#column {
+      flex-direction: column;
+    }
+    .wrap2#column-reverse {
+      flex-direction: column-reverse;
+    }
+
+
+  </style>
+
+  <h3>flex-direction: row;</h3>
+  <div class="wrap2" id="row">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+  </div>
+  <h3>flex-direction: row-reverse;</h3>
+  <div class="wrap2" id="row-reverse">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+  </div>
+  <h3>flex-direction: column;</h3>
+  <div class="wrap2" id="column">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+  </div>
+  <h3>flex-direction: column-reverse;</h3>
+  <div class="wrap2" id="column-reverse">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+  </div>
+
+  <hr>
+
+  <style>
+    
+    .wrap3 {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+    }
+    .wrap3 > .box {
+      width: 80px;
+      height: 80px;
+    }
+    .wrap3#nowrap {
+      flex-wrap: nowrap;
+    }
+    .wrap3#wrap {
+      flex-wrap: wrap;
+    }
+
+
+  </style>
+
+  <h3>flex-wrap: nowrap;</h3>
+  <div class="wrap3" id="nowrap">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+    <div class="box">box4</div>
+    <div class="box">box5</div>
+    <div class="box">box6</div>
+  </div>
+  <h3>flex-wrap: wrap;</h3>
+  <div class="wrap3" id="wrap">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+    <div class="box">box4</div>
+    <div class="box">box5</div>
+    <div class="box">box6</div>
+  </div>
+
+  <hr>
+
+  <style>
+
+    .wrap4 {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      flex-flow: column wrap;
+    }
+
+    .wrap4 > .box {
+      width: 80px;
+      height: 80px;
+    }
+
+    
+
+  </style>
+
+
+  <div class="wrap4">
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+    <div class="box">box4</div>
+    <div class="box">box5</div>
+    <div class="box">box6</div>
+  </div>
+
+
+
 
 
 </body>
