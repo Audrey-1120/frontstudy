@@ -10,19 +10,17 @@
 
   <script>
 
+    var car = {
+      maker: 'bmw',
+      model: '5시리즈'
+    };
 
-    for(var i = 1; i <= 5; i++) {
-      for(var sp = 1; sp < 5 - i; sp++){
-        document.write(' ');
-      }
-      for(var st = 6-i; st < i + 4; st++) {
-        document.write('*');
-      }
-      document.write('\n');
-    }
+    var jsonData = JSON.stringify(car);
+    console.log(jsonData, typeof jsonData);
 
-
-
+    var jsObj = JSON.parse(jsonData);
+    console.log(jsObj, typeof jsObj);
+    
   </script>
 
 
