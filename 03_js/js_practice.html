@@ -8,35 +8,28 @@
 <body>
 
 
-  <div id="div5">
-    <form action="/server/somewhere.do"
-          method="get">
-      <input type="text" name="query" id="query">
-      <input type="text" name="q" id="q">
-      <button type="submit">전송</button>
-    </form>
-  </div>
+  <div id="div1" data-name="tom" data-age="30" data-home-address="newyork">TOM</div>
 
   <script>
 
-    document.querySelector('#div5 form').onsubmit = function(evt) {
-      if(document.getElementById('query').value === '') {
-        alert('내용을 입력하세요..');
-        document.getElementById('query').focus();
-        evt.preventDefault();
-        return;
-      }
-      if(document.getElementById('q').value === '') {
-        alert('내용을 입력하세요..2');
-        document.getElementById('q').focus();
-        evt.preventDefault();
-        return;
-      }
-    }
-
-
+    var div1 = document.getElementById('div1');
+    console.log('data-name:', div1.dataset.name);
+    console.log('data-age: ', div1.dataset.age);
+    console.log('data-home-address:', div1.dataset.homeAddress);
 
   </script>
+
+  <div id="div2">JESSICA</div>
+
+  <script>
+    var div2 = document.getElementById('div2');
+    div2.dataset.mobile = '010-1111-1111';
+    div2.dataset.dayOfBirth = '1990-01-01';
+
+    console.log(div2.dataset.mobile);
+    console.log(div2.dataset.dayOfBirth);
+  </script>
+
 
 </body>
 </html>
