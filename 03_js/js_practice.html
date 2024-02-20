@@ -8,24 +8,35 @@
 <body>
 
 
+  <div id="div5">
+    <form action="/server/somewhere.do"
+          method="get">
+      <input type="text" name="query" id="query">
+      <input type="text" name="q" id="q">
+      <button type="submit">전송</button>
+    </form>
+  </div>
+
   <script>
 
-    var car = {
-      maker: 'bmw',
-      model: '5시리즈'
-    };
+    document.querySelector('#div5 form').onsubmit = function(evt) {
+      if(document.getElementById('query').value === '') {
+        alert('내용을 입력하세요..');
+        document.getElementById('query').focus();
+        evt.preventDefault();
+        return;
+      }
+      if(document.getElementById('q').value === '') {
+        alert('내용을 입력하세요..2');
+        document.getElementById('q').focus();
+        evt.preventDefault();
+        return;
+      }
+    }
 
-    var jsonData = JSON.stringify(car);
-    console.log(jsonData, typeof jsonData);
 
-    var jsObj = JSON.parse(jsonData);
-    console.log(jsObj, typeof jsObj);
-    
+
   </script>
 
-
-
-
-  
 </body>
 </html>
