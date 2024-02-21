@@ -8,27 +8,51 @@
 <body>
 
 
-  <div id="div1" data-name="tom" data-age="30" data-home-address="newyork">TOM</div>
+  <div id="div1">
+    <button type="button" id="btn1">요청1</button>
+    <div id="contents1"></div>
+  </div>
 
   <script>
 
-    var div1 = document.getElementById('div1');
-    console.log('data-name:', div1.dataset.name);
-    console.log('data-age: ', div1.dataset.age);
-    console.log('data-home-address:', div1.dataset.homeAddress);
+    function ex01() {
+
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('GET', 'https://jsonplaceholder.typicode.com/photos/1', true);
+
+      xhr.send();
+
+      xhr.addEventListener('readystatechange', function(){
+
+        if(xhr.readyState !== XMLHttpRequest.DONE)
+          return;
+
+        if(xhr.status !== 200) {
+          console.log('응답 메시지', xhr.statusText);
+          return;
+        }
+
+        var resData = JSON.parse(xhr.responseText);
+        var result = '<div class="album">';
+        result += '<div>앨범아이디:' + resData.albumId + '</div>';
+        result += '<div>아이디:' + resData.id + '</div>';
+        result += '<div>제목:' + resData.title + '</div>';
+        result += '<div><a href="' + resData.url + '" target="_blank">앨범이미지</a></div>';
+        result += '<div><img src="' + resData.thumbnailUrl + '"></div>';
+        result += '</div>';
+
+        document.getElementById('contents1').innerHTML = result;
+
+      })
+      
+    }
+
+    document.getElementById('btn1').addEventListener('click', ex01);
 
   </script>
 
-  <div id="div2">JESSICA</div>
 
-  <script>
-    var div2 = document.getElementById('div2');
-    div2.dataset.mobile = '010-1111-1111';
-    div2.dataset.dayOfBirth = '1990-01-01';
-
-    console.log(div2.dataset.mobile);
-    console.log(div2.dataset.dayOfBirth);
-  </script>
 
 
 </body>
