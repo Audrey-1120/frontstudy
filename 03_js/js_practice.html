@@ -7,52 +7,16 @@
 </head>
 <body>
 
-
-  <div id="div1">
-    <button type="button" id="btn1">요청1</button>
-    <div id="contents1"></div>
-  </div>
-
   <script>
-
-    function ex01() {
-
-      var xhr = new XMLHttpRequest();
-
-      xhr.open('GET', 'https://jsonplaceholder.typicode.com/photos/1', true);
-
-      xhr.send();
-
-      xhr.addEventListener('readystatechange', function(){
-
-        if(xhr.readyState !== XMLHttpRequest.DONE)
-          return;
-
-        if(xhr.status !== 200) {
-          console.log('응답 메시지', xhr.statusText);
-          return;
-        }
-
-        var resData = JSON.parse(xhr.responseText);
-        var result = '<div class="album">';
-        result += '<div>앨범아이디:' + resData.albumId + '</div>';
-        result += '<div>아이디:' + resData.id + '</div>';
-        result += '<div>제목:' + resData.title + '</div>';
-        result += '<div><a href="' + resData.url + '" target="_blank">앨범이미지</a></div>';
-        result += '<div><img src="' + resData.thumbnailUrl + '"></div>';
-        result += '</div>';
-
-        document.getElementById('contents1').innerHTML = result;
-
-      })
-      
+    function myFunc8(func) {
+      func();
     }
 
-    document.getElementById('btn1').addEventListener('click', ex01);
+    myFunc8(function() {
+      console.log('하하');
+    })
 
   </script>
-
-
 
 
 </body>

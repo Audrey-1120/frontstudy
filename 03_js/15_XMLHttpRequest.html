@@ -138,6 +138,7 @@
         if(xhr.status !== 200)
           return;
         var resData = JSON.parse(xhr.responseText);
+        console.log(xhr.responseText);
         var begin = document.getElementById('begin').value || 1;
         var end   = document.getElementById('end').value || 10;
         var result = '';
