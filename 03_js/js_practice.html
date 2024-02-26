@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../../assets/lib/jquery-3.7.1.min.js"></script>
   <title>Document</title>
 </head>
 <body>
 
-  <div>
-    <button onclick="goGoogle()">클릭</button>
-  </div>
-    
+
+
+  <div id="menu"></div>
+
   <script>
-    function goGoogle() {
-      location.href = 'https://www.google.com/';
-    }
+    var menu = $('#menu');
+    menu.append('<div>피자</div>');
+    $('<div>족발</div>').appendTo(menu);
+    menu.prepend('<div>햄버거</div>');
+    $('<div>치킨</div>').prependTo(menu);
+    $('#menu > div:last-of-type').after('<div>보쌈</div>');
+    $('#menu > div:first-of-type').after('<div>김치전</div>');
   </script>
-
-
+  
 
 
 </body>
